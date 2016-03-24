@@ -1,0 +1,34 @@
+Before
+Ctrl + O :Override（覆盖，重写） 方法
+Alt + Insert :方法框
+Alt + End ：f.lux灯光
+Ctrl + P 参数信息
+Ctrl + Q 当前方法的声明
+Alt + Enter 一些提示
+Ctrl + Alt + S 设置
+Ctrl + Alt + O 优化引入
+
+
+1.30.2016
+Ctrl + Shift + Enter直接写出大括号,在句子中间也能直接跳到下一行
+Ctrl + Shift + Backspace 回到上次编辑的地方
+Ctrl + Shift + Space 代码提示
+
+Ctrl + Alt + V引入变量把语句赋值给此变量
+Ctrl + Alt + T把代码块包裹在一块
+
+Alt + Up / Down 方法间快速移动
+
+Ctrl + E 最近编辑的文件列表
+Shift + Click 关闭文件
+
+再按一下" 或者 } );等跳出此括号
+
+1.31.2016
+
+Ctrl + J 生成常用代码模板
+Escape 任何工具窗口可以退出来到编辑界面
+Alt + 工具栏的条目 可以打开该工具条
+ALt + Right / Left 在Tabs之间移动
+Ctrl + G 到达某一行
+
