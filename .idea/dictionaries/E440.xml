@@ -3,6 +3,7 @@
     <words>
       <w>cmphi</w>
       <w>cmplo</w>
+      <w>nums</w>
     </words>
   </dictionary>
 </component>
