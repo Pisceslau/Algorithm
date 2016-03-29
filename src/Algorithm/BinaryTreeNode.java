@@ -33,6 +33,16 @@ public class BinaryTreeNode {
     BinaryTreeNode left;
     BinaryTreeNode right;
 
+    public BinaryTreeNode getParent() {
+        return parent;
+    }
+
+    public void setParent(BinaryTreeNode parent) {
+        this.parent = parent;
+    }
+
+    BinaryTreeNode parent;
+
     public BinaryTreeNode(int value) {
         this.value = value;
     }
