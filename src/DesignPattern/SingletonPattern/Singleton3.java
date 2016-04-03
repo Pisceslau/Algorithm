@@ -1,4 +1,4 @@
-package DesignPattern;
+package DesignPattern.SingletonPattern;
 
 /**
  * Created by Lunar on 2016/4/3.
