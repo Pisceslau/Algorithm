@@ -12,7 +12,7 @@ public class FindGreatestSumOfSubArray {
         //此时的数组和
         int currentSum = 0;
         //此时的历史最大子数组和
-        int greatestSum = 0;
+        int greatestSum = 0x80000000;
         for (int i = 0; i < array.length; i++) {
             //如果数组和小于此时的一个数组元素，
             // 则之前的值肯定不是最大子数组和，作废，
