@@ -1,4 +1,4 @@
-package sort;
+package Sort;
 
 /**
  * Created by Lunar on 2016/1/20.
@@ -18,49 +18,37 @@ public class Quick {
         sort(a, j + 1, hi);
     }
 
-    private static int partition(int[] a, int lo, int hi) {
-        //将数组切分为a[lo..i-1],a[i],a[i+1..hi]
+    public static int partition(int[] a, int lo, int hi) {
+        //二个指针
         int i = lo, j = hi + 1;
+        //最低元素的值(初始切分值)
         int v = a[lo];
         while (true) {
 
-                /*没意外左侧指针就一直右移，直到到达最右侧就跳出来
-            * */
-            //扫描左右检查扫描是否结束并交换元素
             while (a[++i] < v) {
-                //左侧指针到达右侧
-                if (i == hi)
-                    break;
-            }
-            /*没什么意外右指针就左移，直到到达最左边，就跳出来*/
-            while (v < a[--j]) {
-                //右侧的指针到达左侧
-                if (j == lo)
-                    break;
+                //如果i到达最右边跳出此while
+                if (i == hi) break;
             }
 
-
-           /* 以上条件（左边值小于右边）之外的条件就是执行此交换操作的条件（意外）即为：
-           左边的值大于右边了可以写while/if(a[i]>a[j]然后交换a[i],a[j]的值，更容易理解
-
-           * */
-             /*如果左边指针位置过了右边就跳出来这个while(true)说明相遇了，执行lo,j的交换（第二个交换）*/
-            if (i >= j) {
-                break;
+            while (a[--j] > v) {
+                //如果右侧指针到达最左侧了，跳出此while
+                if (j == lo) break;
             }
-            //交换a[i],a[j]
-            while (a[i] >=a[j]) {
+            //如果二个指针相遇了跳出整个大的while循环，执行最终的和初始切分值的交换动作
+
+            if (i >= j) break;
+            while (a[i] > a[j]) {
+                //当左侧元素大于右侧元素则交换
                 int t = a[i];
                 a[i] = a[j];
                 a[j] = t;
             }
         }
-        //将v = a[j] 放入正确的位置
+        //a[j]和初始切分值交换并返回j（下标）
         int t = a[lo];
         a[lo] = a[j];
         a[j] = t;
-
-        return j;//a[lo..j-1] <=a[j] <= a[j+1..h ]达成
+        return j;
     }
 
     public static void main(String[] args) {

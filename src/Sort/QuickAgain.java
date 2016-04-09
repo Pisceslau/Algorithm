@@ -1,4 +1,4 @@
-package sort;
+package Sort;
 
 /**
  * Created by Lunar on 2016/1/20.
@@ -54,10 +54,12 @@ public class QuickAgain {
 
     public static void main(String[] args) {
         int[] array = {4, 5, 2, 6, 6, 3, 28, 6, 23, 86, 9};
-        sort(array);
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
+        int[] b = {1};
+        sort(b);
+        for (int i = 0; i < b.length; i++) {
+            System.out.print(b[i] + " ");
         }
+
     }
 
 }
