@@ -3,6 +3,9 @@ package Algorithm;
 /**
  * Created by Lunar on 2016/3/5.
  * 杨氏矩阵查找：行列递增的矩阵的查找
+ * 二维数组的行数和列数
+ * array.length 就是行数
+ array [0].length 就是列数
  */
 public class YoungMatrix {
     public static final int ROW = 4;
@@ -21,6 +24,7 @@ public class YoungMatrix {
     static boolean youngMatrix(int a[][], int searchKey) {
         int i = 0, j = COL - 1;//最右上角的元素
         int var = a[i][j];
+
         while (true) {
             if (var == searchKey) return true;
             else if (var > searchKey && j > 0) var = a[i][--j];//左边移动
@@ -30,5 +34,6 @@ public class YoungMatrix {
             }
         }
     }
+
 
 }

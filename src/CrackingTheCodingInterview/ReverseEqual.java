@@ -6,6 +6,10 @@ package CrackingTheCodingInterview;
  * 思路：s2是s1s1的子串
  */
 public class ReverseEqual {
+    public static void main(String[] args) {
+        System.out.print(new ReverseEqual().checkReverseEqual("waterBottle", "erBottlewat"));
+    }
+
     public boolean checkReverseEqual(String s1, String s2) {
         //检查s1,s2是否长度相同，而且不为空
         int len = s1.length();
@@ -15,9 +19,5 @@ public class ReverseEqual {
             return s1s1.contains(s2);
         }
         return false;
-    }
-
-    public static void main(String[] args) {
-        System.out.print(new ReverseEqual().checkReverseEqual("waterBottle", "erBottlewat"));
     }
 }
