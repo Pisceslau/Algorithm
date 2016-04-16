@@ -23,7 +23,7 @@ class IsPopOrder {
                 // 入栈数组中的元素入栈
                 stack.push(arrayPop[pushIndex]);
                 // 指向下一个要处理的入栈元素
-                pushIndex++;
+                pushIndex++;//走到栈顶
             }
             if (arrayPop[popIndex] == stack.peek()) {
                 stack.pop();
