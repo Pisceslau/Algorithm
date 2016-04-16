@@ -1,43 +1,22 @@
 package Algorithm;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by Lunar on 2016/4/16.
  */
 public class Solution {
-    ArrayList<ArrayList<Integer>> resultList = new ArrayList<>();
+    HashMap<Character, Integer> map = new HashMap<>();
 
-    public ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int expectedSum) {
-        ArrayList<Integer> list = new ArrayList<>();
-        if (root == null) return resultList;
-
-
-        resultList = FindPath(root, 0, expectedSum, list);
-        return resultList;
-    }
-
-    public ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int curSum, int expectedSum, ArrayList<Integer> list) {
-
-        curSum += root.val;
-        list.add(root.val);
-        //如果现在的和小于期待的和
-        boolean isLeaf = (root.left == null && root.right == null);
-        if ((curSum == expectedSum) && isLeaf) {
-            //如果相等
-            //并且是叶子结点
-            resultList.add(list);
-
+    public int FirstNotRepeatingChar(String str) {
+        if (str == null) return -1;
+        int length = str.length();
+        int times = 1;
+        for (int i = 0; i < length; i++) {
+            if (map.get(str.charAt(i)) == 1)
+                return i;
+            map.put(str.charAt(i), times++);
         }
-        if (root.left != null)
-            FindPath(root.left, curSum, expectedSum, list);
-        //如果左子树不为空递归左子树
-        if (root.right != null)
-            FindPath(root.right, curSum, expectedSum, list);
-
-        list.remove(list.size() - 1);
-
-        return resultList;
-
+        return 0;
     }
 }

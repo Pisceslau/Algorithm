@@ -29,7 +29,6 @@ public class FirstNotRepeatingChar {
 
         HashMap<Character, Integer> hashMap = new HashMap<>();
         for (int i = 0; i < chars.length; i++) {
-            int frequency = 0;
             //如果已经有这个key，也就是字符了,修改频率加1
             if (hashMap.containsKey(chars[i])) {
                 int value = hashMap.get(chars[i]);//得到其值
