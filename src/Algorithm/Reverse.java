@@ -18,44 +18,58 @@ public class Reverse {
     }
 
     //翻转句子中的每个单词
-    static String reverseSentence(String s) {
-        char[] chars = s.toCharArray();
-        if (chars == null) return null;
-        int begin = 0;
-        int end = chars.length - 1;
-        //翻转整个句子
-        reverse(chars, begin, end);
-        //翻转句子中的每个单词
-        int lengthOfWord = 0;//单词的长度
+    static String reverseSentence(String str) {
+        if (str == null || str.length() <= 0) return "";
 
-        for (int i = 0; i < chars.length; i++) {
-            if (chars[i] == ' ') {
-                int right = i - 1;//单词末尾
-                int left = right - lengthOfWord + 1;//单词开头
-                //找到开头末尾则翻转这个单词
-                reverse(chars, left, right);
-                //重新把单词长度置0，计算下一个单词长度
-                lengthOfWord = 0;
+        char[] chars = str.toCharArray();
+        int length = chars.length;
+        //翻转整个句子I ma a .tneduts
+
+        reverse(chars, 0, length - 1);
+        int start = 0;
+        int end = 0;
+        while (start < length) {
+            //如果第一个字符就是空格的话,移动二个下标
+            if (chars[start] == ' ') {
+                start++;
+                end++;
+            }
+            //如果end为字符串的长度即为整个字符串后面（不严谨的说法）或者有空格的话
+            else if (end == length || chars[end] == ' ') {
+                reverse(chars, start, end - 1);//翻转这个单词，end - 1为end-1后的值，但是end本身还是5
+                end++;//单独一句无所谓最终end仍然加一，变为第二个单词的开始位置
+                start = end;//start,end 位置又相同了，于是第三个else 语句执行。
+
             } else {
-                lengthOfWord++;
+                //start不动，end直到空格为止。跑到上一个else if 语句
+                end++;
             }
         }
         return new String(chars);
     }
 
     //第二个算法：左旋转字符串
-    public static void leftRotateString(char[] chars,int n) {
+    public static void leftRotateString(char[] chars, int n) {
         if (chars != null) {
             int length = chars.length;
-            reverse(chars, 0, length-1);//旋转整个“字符串”
-            reverse(chars, 0,n-1);//旋转左字符串
-            reverse(chars, n,length-1);//旋转右字符串
+            reverse(chars, 0, length - 1);//旋转整个“字符串”
+            reverse(chars, 0, n - 1);//旋转左字符串
+            reverse(chars, n, length - 1);//旋转右字符串
         }
     }
+
     public static void main(String[] args) {
-        String s = "I am a student.";
+        /*int a = 5;
+
+        System.out.println(a-1);
+        System.out.println(a);*/
+        String s = "student. a am I";
+        String s2 = "Hello! World";
+        String s3 = "Wonderful!";
         //第一个算法的测试
         System.out.println(reverseSentence(s));
+        System.out.println(reverseSentence(s2));
+        System.out.println(reverseSentence(s3));
         //第二个算法的测试
         String string = "Hello World";
         char[] chars = string.toCharArray();
