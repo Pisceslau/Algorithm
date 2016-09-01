@@ -5,7 +5,7 @@ package Algorithm;
  * 杨氏矩阵查找：行列递增的矩阵的查找
  * 二维数组的行数和列数
  * array.length 就是行数
- array [0].length 就是列数
+ * array [0].length 就是列数
  */
 public class YoungMatrix {
     public static final int ROW = 4;
@@ -18,22 +18,37 @@ public class YoungMatrix {
                 {4, 7, 10, 13},
                 {6, 8, 11, 15}
         };
-        System.out.print(youngMatrix(matrix, 6));
+        System.out.print(youngMatrix(matrix, 19));
     }
 
-    static boolean youngMatrix(int a[][], int searchKey) {
-        int i = 0, j = COL - 1;//最右上角的元素
-        int var = a[i][j];
+    static boolean youngMatrix(int array[][], int target) {
 
-        while (true) {
-            if (var == searchKey) return true;
-            else if (var > searchKey && j > 0) var = a[i][--j];//左边移动
-            else if (var < searchKey && i < ROW - 1) var = a[++i][j];
-            else {
-                return false;
+        if (array == null) return false;
+        boolean find = false;
+        //二维数组的行数
+        int rows = array.length;
+        //二维数组的列数
+        int columns = array[0].length;
+        //初始位置：右上角
+        if (rows > 0 && columns > 0) {
+            int i = 0;
+            int j = columns - 1;
+
+            while (j >= 0 && i < rows) {
+
+                if (array[i][j] == target) {
+                    find = true;
+                    break;
+
+                } else if (array[i][j] > target) {
+                    --j;
+                } else {
+                    ++i;
+                }
             }
         }
-    }
 
+        return find;
+    }
 
 }
