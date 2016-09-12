@@ -63,10 +63,12 @@ public class Reverse {
 
         System.out.println(a-1);
         System.out.println(a);*/
+        String s4 = "I come from China.";
         String s = "student. a am I";
         String s2 = "Hello! World";
         String s3 = "Wonderful!";
         //第一个算法的测试
+        System.out.println(reverseSentence(s4));
         System.out.println(reverseSentence(s));
         System.out.println(reverseSentence(s2));
         System.out.println(reverseSentence(s3));

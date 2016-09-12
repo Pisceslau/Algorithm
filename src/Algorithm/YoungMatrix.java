@@ -8,8 +8,6 @@ package Algorithm;
  * array [0].length 就是列数
  */
 public class YoungMatrix {
-    public static final int ROW = 4;
-    public static final int COL = 4;
 
     public static void main(String[] args) {
         int[][] matrix = {
@@ -29,8 +27,9 @@ public class YoungMatrix {
         int rows = array.length;
         //二维数组的列数
         int columns = array[0].length;
-        //初始位置：右上角
+
         if (rows > 0 && columns > 0) {
+            //初始位置：右上角
             int i = 0;
             int j = columns - 1;
 

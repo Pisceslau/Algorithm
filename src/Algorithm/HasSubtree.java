@@ -24,7 +24,7 @@ public class HasSubtree {
         if (root2 == null) return true;
         if (root1.value != root2.value) return false;
         //递归左右子树看是否相同
-        return doesTree1HasTree2(root1.left, root1.left) && doesTree1HasTree2(root1.right, root2.right);
+        return doesTree1HasTree2(root1.left, root2.left) && doesTree1HasTree2(root1.right, root2.right);
 
     }
 
