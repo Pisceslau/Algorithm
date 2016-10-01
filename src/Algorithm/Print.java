@@ -15,6 +15,7 @@ public class Print {
         if (root == null) return;
         //使用LinkedList实现队列，因为这个插入删除快。
         List<BinaryTreeNode> nodes = new LinkedList<>();
+        //LinkedList<BinaryTreeNode> nodes = new LinkedList<>();
         //首先把根结点放入队列中
         nodes.add(root);
         //初始化，下一行的数目和还没有打印的数目
@@ -23,7 +24,9 @@ public class Print {
 
         while (!nodes.isEmpty()) {
             //首先不出队列仅仅是打印它的值
+            //peek 或者element方法也可以
             BinaryTreeNode node = nodes.get(0);
+            //BinaryTreeNode node = nodes.element();
             System.out.print(node.getValue() + " ");
             //如果儿子结点不为空，则把他们加入队列并且下一行的数目增加
             if (node.left != null) {
@@ -36,6 +39,7 @@ public class Print {
             }
             //把自己出列，会导致要打印的数目减少一
             nodes.remove(0);
+            //nodes.poll();
             toBePrinted--;
             //如果本行变为零0.说明要进行下一行的打印了，下一行的数目自然是要打印的数目了（toBePrinted == nextLevel; ）
             if (toBePrinted == 0) {
