@@ -30,7 +30,7 @@ public class PrintFromTopToBottom {
         while (!queue.isEmpty()) {
             //队列非空去掉队列的头
             BinaryTreeNode head = queue.poll();//head每次都不一样呢
-            System.out.println(head.value);
+            System.out.print(head.value + ",");
             if (head.left != null) queue.add(head.left);
             if (head.right != null) queue.add(head.right);
         }
@@ -94,7 +94,7 @@ public class PrintFromTopToBottom {
         t6.setRight(null);
 
         // 层次遍历
-        System.out.println("层次遍历序列：");
+        System.out.print("层次遍历序列：");
         printFromTopToBottom(root);
 
     }
