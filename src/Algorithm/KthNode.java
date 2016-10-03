@@ -9,14 +9,14 @@ import java.util.ArrayList;
  */
 public class KthNode {
     //中序遍历
-    public static ArrayList<Integer> center(BinaryTreeNode root) {
+    public static ArrayList<Integer> center(TreeNode root) {
 
         ArrayList<Integer> list = new ArrayList<>();
 
         if (root != null) {
             if (root.left != null) center(root.left);
-            System.out.println(root.value);
-            list.add(root.value);
+            System.out.println(root.val);
+            list.add(root.val);
             if (root.right != null) center(root.right);
         }
         return list;
@@ -37,11 +37,12 @@ public class KthNode {
         n2.right = n5;
         n3.left = n6;
         n3.right = n7;
-        System.out.print(KthNode(n1, 3).val);
+        System.out.print(kthNode(n1, 3).val);
+        System.out.print(center(n1));
 
     }
 
-    static TreeNode KthNode(TreeNode pRoot, int k) {
+    static TreeNode kthNode(TreeNode pRoot, int k) {
         if (pRoot == null || k == 0) return null;
 
         return kthNodeCore(pRoot, k);
