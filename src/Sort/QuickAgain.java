@@ -13,7 +13,7 @@ public class QuickAgain {
 
     public static void sort(int[] a, int lo, int hi) {
         //根据返回的切分值递归使用sort
-        if(hi<=lo)return;
+        if (hi <= lo) return;
         int j = partition(a, lo, hi);
         sort(a, lo, j - 1);
         sort(a, j + 1, hi);
@@ -38,12 +38,12 @@ public class QuickAgain {
             //如果二个指针相遇了跳出整个大的while循环，执行最终的和初始切分值的交换动作
 
             if (i >= j) break;
-            while (a[i] > a[j]) {
-                //当左侧元素大于右侧元素则交换
-                int t = a[i];
-                a[i] = a[j];
-                a[j] = t;
-            }
+
+            //当左侧元素大于右侧元素则交换
+            int t = a[i];
+            a[i] = a[j];
+            a[j] = t;
+
         }
         //a[j]和初始切分值交换并返回j（下标）
         int t = a[lo];
@@ -55,9 +55,9 @@ public class QuickAgain {
     public static void main(String[] args) {
         int[] array = {4, 5, 2, 6, 6, 3, 28, 6, 23, 86, 9};
         int[] b = {1};
-        sort(b);
-        for (int i = 0; i < b.length; i++) {
-            System.out.print(b[i] + " ");
+        sort(array);
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
         }
 
     }

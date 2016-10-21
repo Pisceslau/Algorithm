@@ -37,12 +37,12 @@ public class Quick {
             //如果二个指针相遇了跳出整个大的while循环，执行最终的和初始切分值的交换动作
 
             if (i >= j) break;
-            while (a[i] > a[j]) {
-                //当左侧元素大于右侧元素则交换
-                int t = a[i];
-                a[i] = a[j];
-                a[j] = t;
-            }
+            //   if (a[i] > a[j]) {
+            //当左侧元素大于右侧元素则交换
+            int t = a[i];
+            a[i] = a[j];
+            a[j] = t;
+            //   }
         }
         //a[j]和初始切分值交换并返回j（下标）
         int t = a[lo];
@@ -52,7 +52,7 @@ public class Quick {
     }
 
     public static void main(String[] args) {
-        int[] array = {4, 5, 2, 6, 6, 3, 27, 6, 23, 86, 9,89,4,980,90};
+        int[] array = {4, 5, 2, 6, 6, 3, 27, 6, 23, 86, 9, 89, 4, 980, 90};
         sort(array);
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
